@@ -1,35 +1,17 @@
-import { Link } from "react-router-dom";
-import { HeaderRoutes } from "../../router/HeaderRouter";
-import Logo from "../../assets/ImageHeader.svg";
+
+
+import Image from "../../assets/ImageHeader.svg";
 import Title from "../../assets/TitleHeadersvg.svg";
 import Cacanh from "../../assets/Cacanh.png";
 
+
 function HomePage() {
-  const renderNav = () => {
-    return (
-      <div className=" relative flex items-center justify-center gap-5 mx-28 my-3 py-3 bg-mainColor-color_D9D9D9 rounded-full   ">
-        {HeaderRoutes.map((route) => {
-          return (
-            <div key={route.id}>
-              <Link
-                to={route.path}
-                className="  text-lg font-bold text-mainColor-color_2D0000 gap-4 hover:bg-mainColor-color_2D0000 hover:text-mainColor-color_D9D9D9 hover:p-1 hover:rounded-full "
-              >
-                <span className=" ">{route.title}</span>
-              </Link>
-            </div>
-          );
-        })}
-      </div>
-    );
-  };
   return (
     <div className="pt-40">
       <div className="  rounded-2xl mb-20  mx-48 bg-gradient-to-b from-mainColor-color_01042D to-mainColor-color_D9D9D9 shadow-lg ">
-        <div>{renderNav()}</div>
         <div className="flex justify-center gap-1">
           <img src={Title} alt="" />
-          <img src={Logo} alt="" />
+          <img src={Image} alt="" />
         </div>
         <div className="flex my-5 mx-10 gap-4">
           <button className="bg-mainColor-color_2D0000 text-mainColor-color_D9D9D9 px-10 py-4 rounded-full hover:bg-none hover:bg-mainColor-color_D9D9D9 hover:text-mainColor-color_2D0000 font-bold uppercase">
@@ -79,10 +61,11 @@ function HomePage() {
               </div>
             ))}
         </div>
-        <div></div>
-        <button className="font-bold text-lg mx-auto w-full my-10 text-mainColor-color_D9D9D9 ">
-          Xem tất cả
-        </button>
+        <div className="w-full flex justify-center items-center ">
+          <button className="font-bold text-lg my-10 text-mainColor-color_D9D9D9 border px-5 py-2 rounded-full hover:bg-mainColor-color_2D0000 hover:border-mainColor-color_2D0000">
+            Xem tất cả
+          </button>
+        </div>
       </div>
     </div>
   );
