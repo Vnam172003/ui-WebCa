@@ -2,7 +2,7 @@ import Image from "../../assets/ImageHeader.svg";
 import Title from "../../assets/TitleHeadersvg.svg";
 import Image1 from "../../assets/ImgaeHome.png";
 import Image3 from "../../assets/ImageFish.png";
-import Video from "../../assets/hoca.mp4";
+
 function HomePage() {
   return (
     <div className="pt-40">
@@ -34,18 +34,6 @@ function HomePage() {
         </div>
         <div className="pt-20">
           <img src={Image3} alt="" />
-        </div>
-      </div>
-      <div className="m-20 flex">
-        <video
-          src={Video}
-          autoPlay
-          loop
-          muted
-          className=" w-[600px] h-full object-cover shadow-2xl shadow-slate-500 "
-        ></video>
-        <div className="text-mainColor-color_D9D9D9 text-[46px] uppercase mx-auto my-auto ">
-          Hồ cá
         </div>
       </div>
     </div>
