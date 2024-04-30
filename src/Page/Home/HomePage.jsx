@@ -1,10 +1,8 @@
-
-
 import Image from "../../assets/ImageHeader.svg";
 import Title from "../../assets/TitleHeadersvg.svg";
-import Cacanh from "../../assets/Cacanh.png";
-
-
+import Image1 from "../../assets/ImgaeHome.png";
+import Image3 from "../../assets/ImageFish.png";
+import Video from "../../assets/hoca.mp4";
 function HomePage() {
   return (
     <div className="pt-40">
@@ -13,58 +11,41 @@ function HomePage() {
           <img src={Title} alt="" />
           <img src={Image} alt="" />
         </div>
-        <div className="flex my-5 mx-10 gap-4">
-          <button className="bg-mainColor-color_2D0000 text-mainColor-color_D9D9D9 px-10 py-4 rounded-full hover:bg-none hover:bg-mainColor-color_D9D9D9 hover:text-mainColor-color_2D0000 font-bold uppercase">
-            Chọn Cá
-          </button>
-          <button className="text-mainColor-color_2D0000 bg-mainColor-color_D9D9D9 px-10 py-4 rounded-full hover:bg-none hover:text-mainColor-color_D9D9D9 hover:bg-mainColor-color_2D0000 font-bold uppercase">
-            Chọn Hồ Cá
-          </button>
+      </div>
+      <div className="my-20">
+        <div className="grid grid-cols-2 mx-20 gap-5 ">
+          <div className="pt-20 col-span-1 text-mainColor-color_D9D9D9">
+            <h1 className="font-bold text-3xl mb-5">Về chúng tôi</h1>
+            <p className="font-bold text-xl mb-5">
+              Chào mừng đến với thế giới bí ẩn và phong phú của cá cảnh!
+            </p>
+            <p>
+              Cá cảnh không chỉ là những sinh vật sống trong bể cá, mà còn là
+              những người bạn đồng hành đầy màu sắc và sức sống. Với sự đa dạng
+              về hình dáng, kích thước và màu sắc, từ những chú cá nhỏ bé như cá
+              vàng tinh nghịch cho đến những loài cá cỡ lớn và mạnh mẽ như cá
+              điện, thế giới của cá cảnh là một thế giới đầy sức sống và kỳ
+              diệu.
+            </p>
+          </div>
+          <div className="">
+            <img src={Image1} alt="" />
+          </div>
         </div>
-        <hr />
-        <div className="grid grid-cols-5 gap-7 mx-5  py-10  ">
-          <div className="bg-[#F4EBEB] col-span-1 text-center rounded-lg text-mainColor-color_2D0000 hover:bg-mainColor-color_D9D9D9">
-            <img src={Cacanh} alt="" className="w-full" />
-            <div className="w-full h-[1px] bg-mainColor-color_2D0000"></div>
-            <p className=" font-bold text-lg  ">Cá nimo</p>
-            <button className="border border-mainColor-color_2D0000  p-1 rounded-full my-5 hover:bg-mainColor-color_2D0000 hover:text-mainColor-color_D9D9D9">
-              Xem Thêm
-            </button>
-          </div>
-          <div className="bg-[#F4EBEB] col-span-1 text-center rounded-lg text-mainColor-color_2D0000 hover:bg-mainColor-color_D9D9D9">
-            <img src={Cacanh} alt="" className="w-full" />
-            <div className="w-full h-[1px] bg-mainColor-color_2D0000"></div>
-            <p className=" font-bold text-lg  ">Cá nimo</p>
-            <button className="border border-mainColor-color_2D0000  p-1 rounded-full my-5 hover:bg-mainColor-color_2D0000 hover:text-mainColor-color_D9D9D9">
-              Xem Thêm
-            </button>
-          </div>
+        <div className="pt-20">
+          <img src={Image3} alt="" />
         </div>
       </div>
-      <div className="bg-[#AAA9BC] bg-opacity-50">
-        <p className="py-10 px-10 font-bold text-lg text-mainColor-color_D9D9D9">
-          Khuyến mãi combo cá cảnh
-        </p>
-        <div className="grid grid-cols-5 gap-6 mx-10">
-          {Array(10)
-            .fill()
-            .map((_, index) => (
-              <div key={index} className="col-span-1">
-                <div className="bg-[#F4EBEB] text-center rounded-lg text-mainColor-color_2D0000 hover:bg-mainColor-color_D9D9D9">
-                  <img src={Cacanh} alt="" className="w-full" />
-                  <div className="w-full h-[1px] bg-mainColor-color_2D0000"></div>
-                  <p className="font-bold text-lg">Cá nimo</p>
-                  <button className="border border-mainColor-color_2D0000 p-1 rounded-full my-5 hover:bg-mainColor-color_2D0000 hover:text-mainColor-color_D9D9D9">
-                    Xem Thêm
-                  </button>
-                </div>
-              </div>
-            ))}
-        </div>
-        <div className="w-full flex justify-center items-center ">
-          <button className="font-bold text-lg my-10 text-mainColor-color_D9D9D9 border px-5 py-2 rounded-full hover:bg-mainColor-color_2D0000 hover:border-mainColor-color_2D0000">
-            Xem tất cả
-          </button>
+      <div className="m-20 flex">
+        <video
+          src={Video}
+          autoPlay
+          loop
+          muted
+          className=" w-[600px] h-full object-cover shadow-2xl shadow-slate-500 "
+        ></video>
+        <div className="text-mainColor-color_D9D9D9 text-[46px] uppercase mx-auto my-auto ">
+          Hồ cá
         </div>
       </div>
     </div>
