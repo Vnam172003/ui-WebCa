@@ -3,7 +3,8 @@ import { Category, productApi } from "../../Api/Api.product";
 import useQueryParams from "../../util/useQueryParams";
 import { useState } from "react";
 import { Link, createSearchParams } from "react-router-dom";
-import { formatPrice } from "../../hook/formatPrice";
+import { formatPrice } from "../../helper/formatPrice";
+
 import { useAllProduct } from "../../hook/useAllProduct";
 
 function Products() {

@@ -1,4 +1,4 @@
-import { formatPrice } from "../../hook/formatPrice";
+import { formatPrice } from "../../helper/formatPrice";
 
 const ProductItem = ({ product }) => {
   const { name, description, price } = product;

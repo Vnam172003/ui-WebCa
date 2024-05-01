@@ -1,5 +1,5 @@
 import { useCart } from "react-use-cart";
-import { formatPrice } from "../../hook/formatPrice";
+import { formatPrice } from "../../helper/formatPrice";
 
 import { useEffect, useState } from "react";
 function PayPal() {

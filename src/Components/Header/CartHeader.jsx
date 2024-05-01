@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useCart } from "react-use-cart";
-import { formatPrice } from "../../hook/formatPrice";
+import { formatPrice } from "../../helper/formatPrice";
 import { Link } from "react-router-dom";
 
 function CartHeader() {

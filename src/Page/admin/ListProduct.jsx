@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useAllProduct } from "../../hook/useAllProduct";
 import { useUserInfo, useUserToken } from "../../hook/useUserInfo";
 import http from "../../Api/Api";
-import { formatPrice } from "../../hook/formatPrice";
+import { formatPrice } from "../../helper/formatPrice";
 
 export default function ListProduct() {
   const atk = useUserToken();
