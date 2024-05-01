@@ -57,9 +57,11 @@ function UserInforHeader() {
 
           {showPopover && (
             <div className="bg-white absolute top-12 w-48 ">
-              <div className=" py-3 px-1 border-b text-black hover:bg-slate-200">
-                Thông tin cá nhân
-              </div>
+              <Link to={"profile"}>
+                <div className=" py-3 px-1 border-b text-black hover:bg-slate-200">
+                  Thông tin cá nhân
+                </div>
+              </Link>
               {user && user.role === "admin" && (
                 <div className=" py-3 px-1 border-b text-black hover:bg-slate-200">
                   <Link to={"/admin"} className="font-bold  ">

@@ -5,6 +5,7 @@ import { useMutation } from "@tanstack/react-query";
 import { getRule } from "../../../util/rule";
 import Image from "../../../assets/ImageAuth.png";
 import { registerAccount } from "../../../Api/Api.auth";
+import { useState } from "react";
 
 function Register() {
   const {
@@ -12,6 +13,10 @@ function Register() {
     handleSubmit,
     formState: { errors },
   } = useForm();
+  const [showPassword, setShowPassword] = useState(false);
+  const eye = () => {
+    setShowPassword(!showPassword);
+  };
   const rule = getRule();
   const navigate = useNavigate();
   const registerMutation = useMutation({
@@ -76,22 +81,29 @@ function Register() {
             />
             <Input
               name="password"
-              type="password"
+              type={showPassword ? "text" : "password"}
               placeholder="Password"
               autoComplete="on"
               rules={rule.password}
               register={register}
               errorMessage={errors.password?.message}
             />
-            <Input
-              name="confirmPassword"
-              type="password"
-              placeholder="confirm password"
-              autoComplete="on"
-              rules={rule.confirmPassword}
-              register={register}
-              errorMessage={errors.confirmPassword?.message}
-            />
+
+            <div>
+              <Input
+                name="confirmPassword"
+                type={showPassword ? "text" : "password"}
+                placeholder="confirm password"
+                autoComplete="on"
+                rules={rule.confirmPassword}
+                register={register}
+                errorMessage={errors.confirmPassword?.message}
+              />
+              <div className="flex items-center gap-2 mb-3">
+                <input type="checkbox" className="w-4 h-4" onClick={eye} />
+                Hiển thị mật khẩu
+              </div>
+            </div>
           </div>
 
           <button className="w-full border py-3 my-2 hover:bg-mainColor-color_D9D9D9 hover:text-mainColor-color_2D0000 uppercase">

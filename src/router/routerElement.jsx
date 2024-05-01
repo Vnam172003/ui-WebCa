@@ -9,6 +9,7 @@ import ProductDetail from "../Page/Shop/ProductDetail";
 import PayPal from "../Page/PayPal";
 import CormFirmEmail from "../Page/Auth/ComfirmEmail/CormFirmEmail";
 import ListProduct from "../Page/admin/ListProduct";
+import UserInfor from "../Page/UserInfor";
 
 function RouterElement() {
   return (
@@ -18,6 +19,7 @@ function RouterElement() {
         <Route path="/admin" element={<ListProduct />} />
         <Route path="/verify/:email" element={<CormFirmEmail />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/profile" element={<UserInfor />} />
         <Route path="/" element={<HomePage />} />
         <Route path="/danhsach" element={<Products />} />
         <Route path="/cart" element={<Cart />} />

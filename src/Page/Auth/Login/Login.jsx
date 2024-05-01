@@ -5,6 +5,8 @@ import { getRule } from "../../../util/rule";
 import Image from "../../../assets/ImageAuth.png";
 import { useMutation } from "@tanstack/react-query";
 import { LoginAccount } from "../../../Api/Api.auth";
+import { notification } from "antd";
+import { useState } from "react";
 
 function Login() {
   const {
@@ -12,17 +14,18 @@ function Login() {
     handleSubmit,
     formState: { errors },
   } = useForm();
+  const [showPassword, setShowPassword] = useState(false);
+  const eye = () => {
+    setShowPassword(!showPassword);
+  };
+
   const rule = getRule();
   const LogionAccountMutation = useMutation({
     mutationFn: (body) => LoginAccount(body),
   });
 
   const onSubmit = handleSubmit((data) =>
-    LogionAccountMutation.mutate(data, {
-      onSuccess: (data) => {
-        console.log(data);
-      },
-    })
+    LogionAccountMutation.mutate(data, {})
   );
 
   return (
@@ -56,22 +59,22 @@ function Login() {
               register={register}
               errorMessage={errors.email?.message}
             />
-            <Input
-              name="password"
-              type="password"
-              placeholder="password"
-              autoComplete="on"
-              rules={rule.password}
-              register={register}
-              errorMessage={errors.password?.message}
-            />
 
-            <Link
-              to={"/forgot-password"}
-              className="  text-sm underline hover:underline-offset-4"
-            >
-              Quên mật khẩu
-            </Link>
+            <div>
+              <Input
+                name="password"
+                type={showPassword ? "text" : "password"}
+                placeholder="password"
+                autoComplete="on"
+                rules={rule.password}
+                register={register}
+                errorMessage={errors.password?.message}
+              />
+              <div className="flex items-center gap-2 mb-3">
+                <input type="checkbox" className="w-4 h-4" onClick={eye} />
+                Hiển thị mật khẩu
+              </div>
+            </div>
           </div>
 
           <button
