@@ -1,6 +1,5 @@
 import axios from "axios";
 import { LOGIN_URL, REGISTER_URL } from "../util/constants";
-import { toast } from "react-toastify";
 
 class Http {
   constructor() {
@@ -35,7 +34,7 @@ class Http {
       (error) => {
         const data = error.response?.data;
         if (error.status !== 401) {
-          toast.error(data.errors.errorMessage);
+          console.log(error);
         }
       }
     );

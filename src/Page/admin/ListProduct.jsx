@@ -41,21 +41,17 @@ export default function ListProduct() {
     formData.append("imgUrl", file);
     const headers = {
       headers: {
-        "Content-Type": `multipart/form-data`,
+        "Content-Type": "multipart/form-data",
         Authorization: `Beaer ${atk}`,
       },
     };
-    try {
-      const response = await http.post(
-        "/product/createProduct",
-        formData,
-        headers
-      );
-      console.log(response);
-      window.location.reload();
-    } catch (error) {
-      console.log(error);
-    }
+    const response = await http.post(
+      "/product/createProduct",
+      formData,
+      headers
+    );
+    console.log(response);
+    window.location.reload();
   };
 
   const handleDelete = async (id) => {
